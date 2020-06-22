@@ -1,0 +1,13 @@
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include respond-above(sm) {
+        width: 50%;
+    };
+}
+
+.sectionTitle {
+    margin-top: 50px;
+}

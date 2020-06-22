@@ -5,12 +5,13 @@ import store from '~/redux/store';
 
 import Container from '~/components/Container';
 import Row from '~/components/Row';
+import ProductList from '~/components/ProductList';
 
 const App = () => (
     <Provider store={store}>
         <Container>
             <Row>
-                123
+                <ProductList />
             </Row>
         </Container>
     </Provider>
