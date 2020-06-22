@@ -16,6 +16,7 @@ module.exports = function override(config) {
                     resources: [
                         `${__dirname}/src/styles/mixins/responder.scss`,
                         `${__dirname}/src/styles/variables/breakpoints.scss`,
+                        `${__dirname}/src/styles/variables/colors.scss`,
                     ],
                 },
             },
