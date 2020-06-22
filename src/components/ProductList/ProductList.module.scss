@@ -43,7 +43,13 @@
 
 .product {
     background-color: #C4C4C4;
-    width: calc(33.3% - 5px);
-    height: 170px;
+    width: 100%;
+    min-height: 170px;
     margin-bottom: 10px;
+    @include respond-above(sm) {
+        width: calc(50% - 5px);
+    }
+    @include respond-above(md) {
+        width: calc(33.3% - 5px);
+    }
 }
