@@ -6,8 +6,12 @@
     @include respond-above(sm) {
         width: 50%;
     };
+    @include respond-above(md) {
+        width: 60%;
+    }
 }
 
 .sectionTitle {
     margin-top: 0;
+    font-size: 2.1em;
 }
