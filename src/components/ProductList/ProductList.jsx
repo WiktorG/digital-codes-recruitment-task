@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 
 import { getAllProducts } from '~/redux/actions/productsActions';
 import { products as productsSelector } from '~/redux/selectors/productsSelectors';
@@ -15,7 +16,7 @@ import {
 } from './ProductList.module.scss';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const ListItems = ({ items }) => items.map((item) => <ProductListItem {...item} />);
+const ListItems = ({ items }) => items.map((item) => <ProductListItem key={uuid()} {...item} />);
 
 const ProductList = () => {
     const dispatch = useDispatch();

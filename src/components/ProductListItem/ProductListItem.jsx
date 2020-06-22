@@ -11,7 +11,6 @@ import {
 } from './ProductListItem.module.scss';
 
 const ProductListItem = ({
-    id,
     title,
     cover,
     availability,
@@ -33,12 +32,15 @@ const ProductListItem = ({
 );
 
 ProductListItem.propTypes = {
-    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     availability: PropTypes.bool.isRequired,
-    price: PropTypes.oneOf([PropTypes.number, PropTypes.object]).isRequired,
-    currency: PropTypes.number.isRequired,
+    price: PropTypes.number,
+    currency: PropTypes.string.isRequired,
+};
+
+ProductListItem.defaultProps = {
+    price: null,
 };
 
 export default ProductListItem;
