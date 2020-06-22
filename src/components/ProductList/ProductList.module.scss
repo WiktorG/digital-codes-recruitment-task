@@ -1,17 +1,49 @@
 .wrapper { 
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 50px;
+
+    &::after {
+        position: absolute;
+        display: block;
+        right: -15px;
+        width: 2px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
     @include respond-above(sm) {
         width: 50%;
     };
+
     @include respond-above(md) {
         width: 60%;
-    }
+    };
 }
 
 .sectionTitle {
     margin-top: 0;
     font-size: 2.1em;
+}
+
+.productList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include respond-above(sm) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.product {
+    background-color: #C4C4C4;
+    width: calc(33.3% - 5px);
+    height: 170px;
+    margin-bottom: 10px;
 }
