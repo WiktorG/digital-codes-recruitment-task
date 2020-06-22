@@ -5,12 +5,7 @@ import store from '~/redux/store';
 
 const App = () => (
     <Provider store={store}>
-        <IconContext.Provider value={{ className: 'react-icons' }}>
-            <Nav />
-            <ShipsList />
-            <Footer />
-            <GlobalStyles />
-        </IconContext.Provider>
+        <h1>Hello world</h1>
     </Provider>
 );
 
