@@ -1,0 +1,8 @@
+.row { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include respond-above(sm) {
+        flex-direction: row;
+    }
+}
