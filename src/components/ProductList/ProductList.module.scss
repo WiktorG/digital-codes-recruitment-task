@@ -53,3 +53,7 @@
         width: calc(33.3% - 5px);
     }
 }
+
+.requestError {
+    color: $error;
+}
