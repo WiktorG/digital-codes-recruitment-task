@@ -2,7 +2,6 @@
 const path = require('path');
 
 module.exports = function override(config) {
-    console.log(config);
     config.resolve.alias = Object.assign(config.resolve.alias, {
         '~': path.resolve(`${__dirname}/src`),
     });
