@@ -5,14 +5,17 @@ import { getAllProducts } from '~/redux/actions/productsActions';
 import { products as productsSelector } from '~/redux/selectors/productsSelectors';
 
 import { Col } from '~/components/Grid';
+import ProductListItem from '~/components/ProductListItem';
 
 import {
     wrapper,
     sectionTitle,
     productList,
-    product,
     requestError,
 } from './ProductList.module.scss';
+
+// eslint-disable-next-line react/jsx-props-no-spreading
+const ListItems = ({ items }) => items.map((item) => <ProductListItem {...item} />);
 
 const ProductList = () => {
     const dispatch = useDispatch();
@@ -29,12 +32,7 @@ const ProductList = () => {
             </h2>
             {!isPending && !error ? (
                 <ul className={productList}>
-                    <li className={product} />
-                    <li className={product} />
-                    <li className={product} />
-                    <li className={product} />
-                    <li className={product} />
-                    <li className={product} />
+                    <ListItems items={list} />
                 </ul>
             ) : (
                 <span className={requestError}>{error}</span>
