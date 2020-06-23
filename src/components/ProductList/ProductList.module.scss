@@ -15,10 +15,6 @@
     }
     
     @include respond-above(sm) {
-        width: 50%;
-    };
-
-    @include respond-above(md) {
         width: 60%;
     };
 }
@@ -26,6 +22,10 @@
 .sectionTitle {
     margin-top: 0;
     font-size: 1.5em;
+    text-align: center;
+    @include respond-above(sm) {
+        text-align: left;
+    }
     @include respond-above(md) {
         font-size: 2.1em;
     }
