@@ -1,5 +1,6 @@
 import {
     PRODUCT_ADD_TO_CART,
+    PRODUCT_REMOVE_FROM_CART,
 } from '~/redux/actions/cartActions';
 
 const initialState = {
@@ -12,6 +13,11 @@ const cartReducer = (state = initialState, action) => {
         return {
             ...state,
             items: [...state.items, action.productId],
+        };
+    case PRODUCT_REMOVE_FROM_CART:
+        return {
+            ...state,
+            items: [...state.items].filter((id) => id !== action.productId),
         };
     default:
         return state;

@@ -18,8 +18,8 @@ import {
 const CartItems = ({ items }) => items.map((item) => <CartItem key={uuid()} {...item} />);
 
 const Cart = () => {
-    const { list } = useSelector(productsSelector); // products
-    const { items } = useSelector(cartSelector); // ids from cart
+    const { list } = useSelector(productsSelector); // products in store
+    const { items } = useSelector(cartSelector); // ids from cart in store
     const productIds = Array.from(new Set(items)); // ids without duplicates in correct order
 
     const cartItemsInOrder = productIds.map((productId) => {
@@ -33,8 +33,6 @@ const Cart = () => {
             quantity: items.filter((id) => id === product.id).length,
         };
     });
-
-    console.log(cartItemsInOrder);
 
     return (
         <Col className={wrapper}>

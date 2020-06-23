@@ -1,4 +1,5 @@
 .item { 
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,4 +34,10 @@
 .propertyValue {
     margin-left: 7px;
     font-weight: 400;
+}
+
+.removeButton { 
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
