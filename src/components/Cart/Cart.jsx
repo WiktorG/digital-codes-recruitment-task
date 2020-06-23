@@ -42,7 +42,7 @@ const Cart = () => {
         <Col className={wrapper}>
             <h2 className={sectionTitle}>
                 Cart
-                {cartItemsInOrder.length !== 0 && ` - total: ${cartValue} ${currency}`}
+                {cartItemsInOrder.length !== 0 ? ` - total: ${cartValue} ${currency}` : ' - empty'}
             </h2>
             <ul className={itemsList}>
                 <CartItems items={cartItemsInOrder} />
