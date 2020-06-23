@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import {
     item,
     cover as styledCover,
+    info,
+    title as styledTitle,
+    property,
+    propertyValue,
 } from './CartItem.module.scss';
 
 const CartItem = ({
@@ -14,8 +18,18 @@ const CartItem = ({
     currency,
 }) => (
     <li className={item}>
-        <img src={cover} className={styledCover} />
-        {title}
+        <img src={cover} alt={`${title} cover`} className={styledCover} />
+        <div className={info}>
+            <h4 className={styledTitle}>{title}</h4>
+            <span className={property}>
+                Quantity:
+                <span className={propertyValue}>{quantity}</span>
+            </span>
+            <span className={property}>
+                Price:
+                <span className={propertyValue}>{`${price} ${currency}`}</span>
+            </span>
+        </div>
     </li>
 );
 

@@ -4,8 +4,6 @@
     width: 40%;
     margin-top: 50px;
     @include respond-above(sm) {
-        position: fixed;
-        right: 15px;
         height: calc(100vh - 50px);
     }
 }

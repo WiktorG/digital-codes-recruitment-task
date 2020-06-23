@@ -20,21 +20,27 @@ const CartItems = ({ items }) => items.map((item) => <CartItem key={uuid()} {...
 const Cart = () => {
     const { list } = useSelector(productsSelector); // products
     const { items } = useSelector(cartSelector); // ids from cart
+    const productIds = Array.from(new Set(items)); // ids without duplicates in correct order
 
-    const cartItems = list.map((product) => ({
-        id: product.id,
-        cover: product.cover,
-        title: product.title,
-        price: product.price,
-        currency: product.currency,
-        quantity: items.filter((id) => id === product.id).length,
-    })).filter((cartItem) => cartItem.quantity !== 0);
+    const cartItemsInOrder = productIds.map((productId) => {
+        const product = list.find(({ id }) => id === productId);
+        return {
+            id: product.id,
+            cover: product.cover,
+            title: product.title,
+            price: product.price,
+            currency: product.currency,
+            quantity: items.filter((id) => id === product.id).length,
+        };
+    });
+
+    console.log(cartItemsInOrder);
 
     return (
         <Col className={wrapper}>
             <h2 className={sectionTitle}>Cart</h2>
             <ul className={itemsList}>
-                <CartItems items={cartItems} />
+                <CartItems items={cartItemsInOrder} />
             </ul>
         </Col>
     );
