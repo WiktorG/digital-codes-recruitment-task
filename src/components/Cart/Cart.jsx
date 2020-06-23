@@ -15,13 +15,11 @@ const Cart = () => {
     const cartItems = list.map((product) => ({
         id: product.id,
         cover: product.cover,
-        name: product.name,
+        title: product.title,
         price: product.price,
         curency: product.currency,
         quantity: items.filter((id) => id === product.id).length,
     })).filter((cartItem) => cartItem.quantity !== 0);
-
-    console.log(cartItems);
 
     return (
         <Col className={wrapper}>
