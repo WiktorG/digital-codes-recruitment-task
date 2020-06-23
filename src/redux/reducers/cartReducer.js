@@ -5,6 +5,7 @@ import {
 
 const initialState = {
     items: [],
+    currency: 'PLN',
 };
 
 const cartReducer = (state = initialState, action) => {

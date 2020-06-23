@@ -19,7 +19,7 @@ const CartItems = ({ items }) => items.map((item) => <CartItem key={uuid()} {...
 
 const Cart = () => {
     const { list } = useSelector(productsSelector); // products in store
-    const { items } = useSelector(cartSelector); // ids from cart in store
+    const { items, currency } = useSelector(cartSelector); // ids from cart in store
     const productIds = Array.from(new Set(items)); // ids without duplicates in correct order
 
     const cartItemsInOrder = productIds.map((productId) => {
@@ -34,9 +34,16 @@ const Cart = () => {
         };
     });
 
+    const cartValue = cartItemsInOrder
+        .reduce((prev, item) => prev + (item.price * item.quantity), 0)
+        .toFixed(2);
+
     return (
         <Col className={wrapper}>
-            <h2 className={sectionTitle}>Cart</h2>
+            <h2 className={sectionTitle}>
+                Cart
+                {cartItemsInOrder.length !== 0 && ` - total: ${cartValue} ${currency}`}
+            </h2>
             <ul className={itemsList}>
                 <CartItems items={cartItemsInOrder} />
             </ul>
